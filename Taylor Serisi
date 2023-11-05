@@ -1,0 +1,18 @@
+#Taylor Serisi
+import math
+
+x0 = 0
+x = math.pi / 5          # x=pi/5
+fx0 = math.cos(x0)       #f(x0)=cos(x0)
+sonuc = math.cos(x)      #f(x) =cos(x)
+
+cos_turev1 =-math.sin(x0)       #cosx fonksiyonunun turevi
+
+taylor1 = fx0 + cos_turev1 * (x - x0)  #taylor serisinin tek terimli acilimi
+kesme_hatasi1 = sonuc - taylor1        
+
+taylor2 = taylor1 + (fx0*(x*2)/2)     #fx0+cos_turev1*(x-x0)+(fx0*(x*2)/2)=>taylor serisinin iki terimli acilimi
+kesme_hatasi2 = sonuc - taylor2
+
+print("Tek terimli kesme hatası: {}".format(kesme_hatasi1))
+print("İki terimli kesme hatası: {}".format(kesme_hatasi2))
